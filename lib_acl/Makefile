@@ -123,7 +123,7 @@ endif
 ifeq ($(findstring MINGW, $(UNIXNAME)), MINGW)
 	CFLAGS += -DLINUX2 -DMINGW
 	UNIXTYPE = LINUX
-	SYSLIB = -lpthread-2
+	SYSLIB = -lpthread
 	RPATH = mingw
 endif
 
@@ -131,7 +131,7 @@ endif
 ifeq ($(findstring MSYS, $(UNIXNAME)), MSYS)
 	CFLAGS += -DLINUX2 -DMINGW
 	UNIXTYPE = LINUX
-	SYSLIB = -lpthread-2
+	SYSLIB = -lpthread
 	RPATH = mingw
 endif
 
@@ -210,7 +210,7 @@ DB_SRC       = $(wildcard $(SRC_PATH_SRC)/db/*.c) \
 		$(wildcard $(SRC_PATH_SRC)/db/null/*.c) \
 		$(wildcard $(SRC_PATH_SRC)/db/memdb/*.c) \
 		$(wildcard $(SRC_PATH_SRC)/db/zdb/*.c)
-CODE_SRC     = $(wildcard $(SRC_PATH_SRC)/code/*.c) 
+CODE_SRC     = $(wildcard $(SRC_PATH_SRC)/code/*.c)
 MASTER_SRC   = $(wildcard $(SRC_PATH_SRC)/master/*.c) \
 		$(wildcard $(SRC_PATH_SRC)/master/framework/*.c) \
 		$(wildcard $(SRC_PATH_SRC)/master/framework/trigger/*.c) \
@@ -352,7 +352,7 @@ $(OBJ_PATH_DST)/%.o: $(SRC_PATH_SRC)/init/%.c
 	$(COMPILE_OBJ)
 $(DEF_PATH_DST)/%.inc: $(SRC_PATH_SRC)/init/%.c
 	$(CREATE_DEF)
-# private 
+# private
 $(OBJ_PATH_DST)/%.o: $(SRC_PATH_SRC)/private/%.c
 	$(COMPILE_OBJ)
 $(DEF_PATH_DST)/%.inc: $(SRC_PATH_SRC)/private/%.c
