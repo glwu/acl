@@ -134,3 +134,6 @@ lib_acl_cpp/src/acl_stdafx.hpp.gch
 lib_protocol/Debug/
 lib_protocol/debug/
 lib_rpc/Debug/
+dist/
+*.exe
+

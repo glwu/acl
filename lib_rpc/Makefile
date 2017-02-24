@@ -10,7 +10,7 @@ CFLAGS = -c -g -W \
 -Wall \
 -Wcast-align \
 -Wpointer-arith \
--Werror \
+#-Werror \
 -Wshadow \
 -O3 \
 -D_REENTRANT \
@@ -43,10 +43,10 @@ ifeq ($(findstring FreeBSD, $(UNIXNAME)), FreeBSD)
 endif
 
 # For Darwin
-ifeq ($(findstring Darwin, $(UNIXNAME)), Darwin)                               
+ifeq ($(findstring Darwin, $(UNIXNAME)), Darwin)
 	CFLAGS += -DMACOSX -Wno-invalid-source-encoding -Wno-extended-offsetof
-	UNIXTYPE = MACOSX                                                      
-endif 
+	UNIXTYPE = MACOSX
+endif
 
 # For Linux
 ifeq ($(findstring Linux, $(UNIXNAME)), Linux)
